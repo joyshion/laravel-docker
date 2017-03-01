@@ -7,8 +7,9 @@ LaravelInstall()
 
 NpmInstall()
 {
-    docker run -it --rm -v $PWD/app:/app -w /app node:alpine npm install -g gulp-cli grunt-cli webpack bower
-    docker run -it --rm -v $PWD/app:/app -w /app node:alpine npm install
+    docker run -d -v $PWD/app:/app -w /app --name laravel_node node:alpine tail -f /dev/null
+    docker exec laravel_node npm install -g gulp-cli grunt-cli webpack bower
+    docker exec laravel_node npm install
 }
 
 Init()

@@ -27,11 +27,11 @@ chmod +x install_cn.sh
 ###前端构建
 ```sh
 # Mix
-docker run -it --rm -v $PWD/app:/app -w /app node:alpine npm run watch
-docker run -it --rm -v $PWD/app:/app -w /app node:alpine npm run production
+docker exec laravel_node npm run watch
+docker exec laravel_node npm run production
 # Elixir
-docker run -it --rm -v $PWD/app:/app -w /app node:alpine gulp watch
-docker run -it --rm -v $PWD/app:/app -w /app node:alpine gulp --production
+docker exec laravel_node gulp watch
+docker exec laravel_node gulp --production
 ```
 ###扩展包
 ```sh
