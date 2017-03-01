@@ -1,0 +1,9 @@
+language: bash
+services: docker
+
+script:
+  - chmod +x install.sh
+  - ./install.sh -v 1
+
+after_script:
+  - curl -o /dev/null -s -w %{http_code}"\n" localhost
