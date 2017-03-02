@@ -19,7 +19,7 @@ services:
             - memcached
             - redis
         volumes:
-            - ./app:/var/www
+            - ./app:/app
             - ./php/conf/php.ini:/usr/local/etc/php/php.ini:ro
     mysql:
         image: mariadb:10.1
