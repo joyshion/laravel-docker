@@ -8,8 +8,8 @@ services:
         links:
             - php
         volumes:
+            - ./app:/app
             - ./nginx/conf.d:/etc/nginx/conf.d:ro
-            - ./app:/var/www
     php:
         image: shion/php-fpm
         expose:
