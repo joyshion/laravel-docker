@@ -11,7 +11,7 @@ services:
             - ./nginx/conf.d:/etc/nginx/conf.d:ro
             - ./app:/var/www
     php:
-        build: ./php
+        image: shion/php-fpm
         expose:
             - "9000"
         links:
@@ -20,6 +20,7 @@ services:
             - redis
         volumes:
             - ./app:/var/www
+            - ./php/conf/php.ini:/usr/local/etc/php/php.ini:ro
     mysql:
         image: mariadb:10.1
         ports:
