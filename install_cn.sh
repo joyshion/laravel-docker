@@ -7,8 +7,7 @@ LaravelInstall()
 
 NpmInstall()
 {
-    docker build node -t nodecn
-    docker run -d -v $PWD/app:/app -w /app --name laravel_node nodecn tail -f /dev/null
+    docker run -d -v $PWD/app:/app -w /app --name laravel_node shion/node tail -f /dev/null
     docker exec laravel_node cnpm install -g gulp-cli grunt-cli webpack bower
     docker exec laravel_node cnpm install
 }
